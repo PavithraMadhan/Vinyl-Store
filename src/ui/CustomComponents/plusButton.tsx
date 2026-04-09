@@ -21,60 +21,15 @@ const AddToCartButton = () => {
             height: "40px",
             borderRadius: "50%",
             padding: 0,
-
-            position: "relative",
-            overflow: "hidden",
-
             backgroundColor: "#fff",
-            border: "1px solid #ccc", // ✅ force border
+            border: `1px solid #ccc`,
             color: "#000",
-
-            transition: "all 0.3s ease",
-
-            "&:hover": {
-              width: "auto",
-              borderRadius: "20px",
-              borderColor: colors.black,
-              backgroundColor: "#fff",
-              padding: "0.5rem 0.75rem",
-            },
-
-            // remove MUI default hover override
-            "&:hover fieldset": {
-              borderColor: colors.turfGreen,
-            },
-
-            // icon centered always
-            "& .icon": {
-              position: "absolute",
-              left: "50%",
-              top: "50%",
-              transform: "translate(-50%, -50%)",
-              transition: "all 0.3s ease",
-            },
-
-            // move icon left on hover
-            "&:hover .icon": {
-              left: "16px",
-              transform: "translateY(-50%)",
-            },
-
-            // label hidden initially
-            "& .label": {
-              opacity: 0,
-              marginLeft: "40px",
-              whiteSpace: "nowrap",
-              transition: "opacity 0.2s ease",
-            },
-
-            "&:hover .label": {
-              opacity: 1,
-            },
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          <AddIcon className="icon" />
-
-          <Box className="label">Add to Cart</Box>
+          <AddIcon />
         </Button>
       ) : (
         <Button
@@ -87,10 +42,6 @@ const AddToCartButton = () => {
             backgroundColor: colors.turfGreen,
             color: "#fff",
             padding: "0 16px",
-
-            "&:hover": {
-              backgroundColor: colors.turfGreen,
-            },
           }}
         >
           Added to Cart

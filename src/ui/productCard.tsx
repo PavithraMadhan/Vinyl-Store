@@ -63,7 +63,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, name, price, isSoldOut
                     <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mt: 2 }}>
                         <Typography
                             variant="subtitle2"
-                            sx={{ fontWeight: 700, color: colors.turfGreen, fontSize: '1rem' }}
+                            sx={{ fontWeight: 700, color: colors.black, fontSize: '1rem' }}
                         >
                             ${price}
                         </Typography>
