@@ -5,10 +5,10 @@ import colors from "@/app/lib/colors";
 
 export default function Footer() {
   const quickLinks = [
-    { label: "New Arrivals", href: "/new-arrivals" },
-    { label: "On Sale", href: "/on-sale" },
-    { label: "Accessories", href: "/accessories" },
-    { label: "More", href: "/more" },
+    { label: "New Arrivals", href: "/collections/new-arrivals" },
+    { label: "On Sale", href: "/collections/on-sale" },
+    { label: "Accessories", href: "/collections/accessories" },
+    { label: "More", href: "/collections/more" },
   ];
 
   return (

@@ -8,12 +8,12 @@ import colors from "@/app/lib/colors";
 const smallScreenDisplayStyles = {
     display: "flex",
     overflowX: "auto",
-    gap: 2,
+    gap: '0.5rem',
     scrollSnapType: "x mandatory",
     "&::-webkit-scrollbar": { height: "0px" },
     "&::-webkit-scrollbar-thumb": { backgroundColor: "transparent" },
     height: "100%",
-    mx: 1,
+    mx: '0.25rem',
 };
 
 export default function NewArrivals() {
@@ -29,7 +29,7 @@ export default function NewArrivals() {
             {/* MD+ screen grid container */}
             <Box sx={{ display: { xs: "none", md: "block" } }}>
                 <Grid container spacing={3}>
-                    {products.slice(0, 8).map((product) => (
+                    {products.filter(product => product.newArrival === true).slice(0, 8).map((product) => (
                         <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={product.id}>
                             {/* Make the card fill the height */}
                             <Box sx={{ height: "100%" }}>
@@ -67,7 +67,7 @@ export default function NewArrivals() {
                 </Box>
             </Box>
             <Box sx={{ display: "flex", justifyContent: "flex-end", alignItems: 'flex-end', flexDirection: 'row', pt: '1.5rem' }}>
-                <Button variant="contained" href="/new-arrivals" sx={{
+                <Button variant="contained" href="/collections/new-arrivals" sx={{
                     backgroundColor: colors.carrotOrange, fontWeight: 500,
                     textTransform: "none", // keeps the text as-is
                     "&:hover": {

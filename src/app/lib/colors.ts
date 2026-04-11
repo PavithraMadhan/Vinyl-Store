@@ -1,6 +1,5 @@
 const colors = {
     white: "#FFFFFF",
-    grey20: "#eeefede5",
     // Palette 1
     black: "#040302",
     flagRed: "#D60022",

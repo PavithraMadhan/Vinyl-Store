@@ -8,6 +8,16 @@ const images = [
   "/BannerImg3.jpeg",
 ];
 
+const bannerImageStyle = {
+  position: "absolute",
+  top: 0,
+  left: 0,
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  transition: "opacity 1s ease-in-out",
+};
+
 export default function Banner() {
   const [current, setCurrent] = useState(0);
 
@@ -27,7 +37,7 @@ export default function Banner() {
         height: { xs: 200, sm: 300, md: 400 }, // responsive height
         margin: "0 auto",
         overflow: "hidden",
-        borderRadius: '8px', 
+        borderRadius: '8px',
       }}
     >
       {images.map((src, index) => (
@@ -36,16 +46,7 @@ export default function Banner() {
           component="img"
           src={src}
           alt={`Slide ${index}`}
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            opacity: index === current ? 1 : 0,
-            transition: "opacity 1s ease-in-out",
-          }}
+          sx={{ ...bannerImageStyle, opacity: index === current ? 1 : 0 }}
         />
       ))}
     </Box>

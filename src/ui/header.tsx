@@ -6,11 +6,21 @@ import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import colors from "@/app/lib/colors";
 
 const navItems = [
-    { label: "New Arrivals", href: "/new-arrivals" },
+    { label: "New Arrivals", href: "/collections/new-arrivals" },
     { label: "On Sale", href: "/on-sale" },
     { label: "Accessories", href: "/accessories" },
     { label: "More", href: "/more" },
 ];
+
+const headerParentStyle = {
+    maxWidth: "1440px",
+    margin: "0 auto",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    py: '0.5rem',
+    px: '0.75rem',
+};
 
 export default function Header() {
     return (
@@ -22,15 +32,7 @@ export default function Header() {
             }}
         >
             <Box
-                sx={{
-                    maxWidth: "1440px",
-                    margin: "0 auto",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    py: 2,
-                    px: 3,
-                }}
+                sx={ headerParentStyle }
             >
                 <Box sx={{ display: "flex", alignItems: "center", gap: "2rem" }}>
                     {/* Logo */}
@@ -58,9 +60,9 @@ export default function Header() {
                                         color: colors.white, // text color changes on hover
                                     },
                                 }}>
-                                    <Typography sx={{ fontWeight: '500'}}>
-                                {item.label}
-                            </Typography>
+                                <Typography sx={{ fontWeight: '500' }}>
+                                    {item.label}
+                                </Typography>
                             </Button>
                         ))}
                     </Box>

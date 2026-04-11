@@ -6,6 +6,29 @@ import AddIcon from "@mui/icons-material/Add";
 import CheckIcon from "@mui/icons-material/Check";
 import colors from "@/app/lib/colors";
 
+const addToCartStyle = {
+  minWidth: 0,
+  width: "40px",
+  height: "40px",
+  borderRadius: "50%",
+  padding: 0,
+  backgroundColor: "#fff",
+  border: `1px solid #ccc`,
+  color: "#000",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+};
+
+const addedToCartStyle = {
+  height: "40px",
+  borderRadius: "20px",
+  textTransform: "none",
+  backgroundColor: colors.turfGreen,
+  color: "#fff",
+  padding: "0 1rem",
+};
+
 const AddToCartButton = () => {
   const [added, setAdded] = useState(false);
 
@@ -15,19 +38,7 @@ const AddToCartButton = () => {
         <Button
           variant="outlined"
           onClick={() => setAdded(true)}
-          sx={{
-            minWidth: 0,
-            width: "40px",
-            height: "40px",
-            borderRadius: "50%",
-            padding: 0,
-            backgroundColor: "#fff",
-            border: `1px solid #ccc`,
-            color: "#000",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          sx={addToCartStyle}
         >
           <AddIcon />
         </Button>
@@ -35,14 +46,7 @@ const AddToCartButton = () => {
         <Button
           variant="contained"
           startIcon={<CheckIcon />}
-          sx={{
-            height: "40px",
-            borderRadius: "20px",
-            textTransform: "none",
-            backgroundColor: colors.turfGreen,
-            color: "#fff",
-            padding: "0 16px",
-          }}
+          sx={addedToCartStyle}
         >
           Added to Cart
         </Button>

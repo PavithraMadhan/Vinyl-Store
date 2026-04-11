@@ -12,7 +12,7 @@ interface ProductCardProps {
 }
 
 const parentBoxStyles = {
-    height: "100%", // take full height of the Grid item
+    height: "100%",
     display: "flex",
     flexDirection: "column",
     borderRadius: 2,
@@ -26,6 +26,23 @@ const parentBoxStyles = {
         cursor: "pointer",
     },
 };
+
+const soldOutSectionStyle = {
+    padding: "1rem",
+    backgroundColor: colors.flagRed,
+    display: "flex",
+    justifyContent: "center",
+    flexGrow: 1,
+};
+
+const productDetailsBox = {
+    padding: "1rem",
+    backgroundColor: "#fff",
+    flexGrow: 1, // make text container grow to fill remaining space
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+}
 
 const ProductCard: React.FC<ProductCardProps> = ({ image, name, price, isSoldOut = false }) => {
     return (
@@ -45,16 +62,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, name, price, isSoldOut
 
             {/* Name & Price or Sold Out */}
             {!isSoldOut ? (
-                <Box
-                    sx={{
-                        padding: "1rem",
-                        backgroundColor: "#fff",
-                        flexGrow: 1, // make text container grow to fill remaining space
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "space-between",
-                    }}
-                >
+                <Box sx={productDetailsBox}>
                     <Box>
                         <Typography variant="subtitle1" sx={{ fontWeight: 600, color: "#040302" }}>
                             {name}
@@ -71,17 +79,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, name, price, isSoldOut
                     </Box>
                 </Box>) :
                 (
-                    <Box sx={{
-                        padding: "1rem",
-                        backgroundColor: colors.flagRed,
-                        display: "flex",
-                        justifyContent: "center",
-                        flexGrow: 1,
-                    }}>
+                    <Box sx={soldOutSectionStyle}>
                         <Typography sx={{ fontWeight: 500, color: colors.white }}>
                             Sold Out
                         </Typography>
-
                     </Box>
                 )}
         </Box>
