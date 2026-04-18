@@ -4,6 +4,7 @@ import { Box, Button, Typography } from "@mui/material";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import colors from "@/app/lib/colors";
+import { useRouter } from "next/navigation";
 
 const navItems = [
     { label: "New Arrivals", href: "/collections/new-arrivals" },
@@ -23,6 +24,7 @@ const headerParentStyle = {
 };
 
 export default function Header() {
+    const router = useRouter();
     return (
         <Box
             component="header"
@@ -36,7 +38,7 @@ export default function Header() {
             >
                 <Box sx={{ display: "flex", alignItems: "center", gap: "2rem" }}>
                     {/* Logo */}
-                    <Typography variant="h6" fontWeight="bold">
+                    <Typography variant="h6" fontWeight="bold" onClick={() => router.push('/')} sx={{ cursor: "pointer" }}>
                         MyStore
                     </Typography>
 

@@ -54,7 +54,7 @@ export default function NewArrivals() {
                             sx={{
                                 flex: { xs: "0 0 80%", sm: "0 0 40%" }, // card takes 80% of viewport width
                                 scrollSnapAlign: "start",
-                                mb: 1
+                                mb: "0.25rem"
                             }}
                         >
                             <ProductCard

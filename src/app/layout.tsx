@@ -28,7 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           >
             {children}
           </Box>
-          <Footer/>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

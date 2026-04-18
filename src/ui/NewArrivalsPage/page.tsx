@@ -5,17 +5,6 @@ import { useState } from "react";
 import products from "../../mockData/productDetails.json";
 import SingleImageBanner from "../singleImageBanner";
 
-const smallScreenDisplayStyles = {
-  display: "flex",
-  overflowX: "auto",
-  gap: '0.5rem',
-  scrollSnapType: "x mandatory",
-  "&::-webkit-scrollbar": { height: "0px" },
-  "&::-webkit-scrollbar-thumb": { backgroundColor: "transparent" },
-  height: "100%",
-  mx: '0.25rem',
-};
-
 const NewArrivalsPage = () => {
   // Pagination state
   const [page, setPage] = useState(1);
@@ -48,7 +37,7 @@ const NewArrivalsPage = () => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: '1rem', margin: "0 auto"}}>
     <SingleImageBanner title={"New Arrivals"} description={"Discover our latest collection of your favourites."} imageUrl={"/NewArrivalsBanner.jpeg"} />
-      <Box sx={{ display: { xs: "none", md: "block" } }}>
+      <Box sx={{ display: { xs: "none", md: "block" }, mt: "1rem" }}>
         <Grid container spacing={3}>
           {displayedProducts.map((product) => (
             <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={product.id}>
