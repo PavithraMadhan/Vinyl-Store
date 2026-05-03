@@ -1,11 +1,13 @@
 'use client';
 import ProductCard from "@/ui/productCard";
 import { Box, Button, Grid, Pagination } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import products from "../../mockData/productDetails.json";
 import SingleImageBanner from "../singleImageBanner";
+import Marquee from "react-fast-marquee";
+import colors from "@/app/lib/colors";
 
-const NewArrivalsPage = () => {
+const OnSalePage = () => {
   // Pagination state
   const [page, setPage] = useState(1);
   const itemsPerPage = 8;
@@ -15,7 +17,7 @@ const NewArrivalsPage = () => {
   const endIndex = startIndex + itemsPerPage;
 
   // Filter and slice the products
-  const filteredProducts = products.filter(product => product.newArrival === true);
+  const filteredProducts = products.filter(product => product.onSale === true);
   const displayedProducts = filteredProducts.slice(startIndex, endIndex);
 
   // Handle page change
@@ -40,22 +42,26 @@ const NewArrivalsPage = () => {
   }, [page]); // This effect will run when `page` changes
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: '1rem', margin: "0 auto"}}>
-    <SingleImageBanner title={"New Arrivals"} description={"Discover our latest collection of your favourites."} imageUrl={"/NewArrivalsBanner.jpeg"} />
+    <Box sx={{ display: "flex", flexDirection: "column", gap: '1rem', margin: "0 auto" }}>
+      <SingleImageBanner title={"New Arrivals"} description={"Discover our latest collection of your favourites."} imageUrl={"/NewArrivalsBanner.jpeg"} />
+      <Marquee style={{ fontSize: '1.5rem', color: colors.white, backgroundColor: colors.flagRed, padding: '10px', fontWeight: '700', letterSpacing: '1.5rem' }}> SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE</Marquee>
+      
       <Box sx={{ display: { xs: "none", md: "block" }, mt: "1rem" }}>
         <Grid container spacing={3}>
-          {displayedProducts.map((product) => (
-            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={product.id}>
-              <Box sx={{ height: "100%" }}>
-                <ProductCard
-                  image={product.image}
-                  name={`${product.title} – ${product.artist}`}
-                  price={product.price}
-                />
-              </Box>
-            </Grid>
-          ))}
+          {displayedProducts 
+            .map((product) => (
+              <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={product.id}>
+                <Box sx={{ height: "100%" }}>
+                  <ProductCard
+                    image={product.image}
+                    name={`${product.title} – ${product.artist}`}
+                    price={product.price}
+                  />
+                </Box>
+              </Grid>
+            ))}
         </Grid>
+
         {/* Pagination Controls */}
         <Box sx={{ display: "flex", justifyContent: "center", mt: 3 }}>
           <Pagination
@@ -82,6 +88,7 @@ const NewArrivalsPage = () => {
             </Grid>
           ))}
         </Grid>
+
         {/* Load More Button */}
         {displayedProductsMobile.length < filteredProducts.length && (
           <Box sx={{ display: "flex", justifyContent: "flex-end", pt: '1.5rem' }}>
@@ -95,4 +102,4 @@ const NewArrivalsPage = () => {
   );
 };
 
-export default NewArrivalsPage;
+export default OnSalePage;

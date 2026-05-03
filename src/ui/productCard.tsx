@@ -9,6 +9,7 @@ interface ProductCardProps {
     name: string;
     price: string | number;
     isSoldOut?: boolean;
+    isOnSale?: boolean;
 }
 
 const parentBoxStyles = {
