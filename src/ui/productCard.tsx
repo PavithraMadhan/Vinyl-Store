@@ -10,6 +10,7 @@ interface ProductCardProps {
     price: string | number;
     isSoldOut?: boolean;
     isOnSale?: boolean;
+    salePrice?: string | number | null; // Add salePrice prop to pass the discounted price
 }
 
 const parentBoxStyles = {
@@ -45,12 +46,12 @@ const productDetailsBox = {
     justifyContent: 'space-between',
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ image, name, price, isSoldOut = false }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ image, name, price, isSoldOut = false, isOnSale = false, salePrice }) => {
     return (
         <Box sx={parentBoxStyles}>
             {/* Image */}
             <Box
-                component="img"
+                component='img'
                 src={image}
                 alt={name}
                 sx={{
@@ -65,27 +66,58 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, name, price, isSoldOut
             {!isSoldOut ? (
                 <Box sx={productDetailsBox}>
                     <Box>
-                        <Typography variant="subtitle1" sx={{ fontWeight: 600, color: '#040302' }}>
+                        <Typography variant='subtitle1' sx={{ fontWeight: 600, color: '#040302' }}>
                             {name}
                         </Typography>
                     </Box>
+
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 2 }}>
-                        <Typography
-                            variant="subtitle2"
-                            sx={{ fontWeight: 700, color: colors.black, fontSize: '1rem' }}
-                        >
-                            ${price}
-                        </Typography>
+                        {isOnSale ? (
+                            <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                                <Box>
+                                <Typography
+                                    variant='subtitle2'
+                                    sx={{
+                                        fontWeight: 700,
+                                        color: 'red',
+                                        fontSize: '1rem',
+                                        textDecoration: 'line-through',
+                                    }}
+                                >
+                                    ${price}
+                                </Typography>
+                                </Box>
+                                <Box>
+                                <Typography
+                                    variant='subtitle2'
+                                    sx={{
+                                        fontWeight: 700,
+                                        color: colors.black,
+                                        fontSize: '1rem',
+                                    }}
+                                >
+                                    ${salePrice}
+                                </Typography>
+                                </Box>
+                            </Box>
+                        ) : (
+                            <Typography
+                                variant='subtitle2'
+                                sx={{ fontWeight: 700, color: colors.black, fontSize: '1rem' }}
+                            >
+                                ${price}
+                            </Typography>
+                        )}
                         <AddToCartButton />
                     </Box>
-                </Box>) :
-                (
-                    <Box sx={soldOutSectionStyle}>
-                        <Typography sx={{ fontWeight: 500, color: colors.white }}>
-                            Sold Out
-                        </Typography>
-                    </Box>
-                )}
+                </Box>
+            ) : (
+                <Box sx={soldOutSectionStyle}>
+                    <Typography sx={{ fontWeight: 500, color: colors.white }}>
+                        Sold Out
+                    </Typography>
+                </Box>
+            )}
         </Box>
     );
 };

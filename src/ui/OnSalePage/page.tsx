@@ -43,8 +43,8 @@ const OnSalePage = () => {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: '1rem', margin: '0 auto' }}>
-      <SingleImageBanner title={'New Arrivals'} description={'Discover our latest collection of your favourites.'} imageUrl={'/NewArrivalsBanner.jpeg'} />
-      <Marquee style={{ fontSize: '1.5rem', color: colors.white, backgroundColor: colors.flagRed, padding: '10px', fontWeight: '700', letterSpacing: '1.5rem' }}> SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE</Marquee>
+      <SingleImageBanner title={'On Sale'} description={'Prices So Low, They Should Be Illegal.'} imageUrl={'/OnSaleBanner.jpg'} />
+      <Marquee style={{ fontSize: '1.5rem', color: colors.white, backgroundColor: colors.flagRed, padding: '10px', fontWeight: '700', letterSpacing: '1.5rem' }}>      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      SALE      </Marquee>
       
       <Box sx={{ display: { xs: 'none', md: 'block' }, mt: '1rem' }}>
         <Grid container spacing={3}>
@@ -56,6 +56,8 @@ const OnSalePage = () => {
                     image={product.image}
                     name={`${product.title} – ${product.artist}`}
                     price={product.price}
+                    isOnSale={product.onSale}
+                    salePrice={product.salePrice}
                   />
                 </Box>
               </Grid>
@@ -83,6 +85,8 @@ const OnSalePage = () => {
                   image={product.image}
                   name={`${product.title} – ${product.artist}`}
                   price={product.price}
+                  isOnSale={product.onSale}
+                  salePrice={product.salePrice}
                 />
               </Box>
             </Grid>
