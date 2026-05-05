@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { ReactNode } from "react";
-import { ThemeProvider, CssBaseline, Box } from "@mui/material";
-import theme from "./theme";
-import Header from "@/ui/header";
-import Footer from "@/ui/footer";
+import { ReactNode } from 'react';
+import { ThemeProvider, CssBaseline, Box } from '@mui/material';
+import theme from './theme';
+import Header from '@/ui/header';
+import Footer from '@/ui/footer';
 
 interface RootLayoutProps {
   children: ReactNode;
@@ -20,10 +20,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Box
             component="main"
             sx={{
-              padding: "1.5rem",
-              maxWidth: "1440px",
-              margin: "0 auto", // centers horizontally
-              width: "100%", // ensures it shrinks on smaller screens
+              padding: '1.5rem',
+              maxWidth: '1440px',
+              margin: '0 auto', // centers horizontally
+              width: '100%', // ensures it shrinks on smaller screens
             }}
           >
             {children}

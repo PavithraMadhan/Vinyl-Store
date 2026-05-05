@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { Box, Typography, Link } from "@mui/material";
-import colors from "@/app/lib/colors";
+import { Box, Typography, Link } from '@mui/material';
+import colors from '@/app/lib/colors';
 
 export default function Footer() {
   const quickLinks = [
-    { label: "New Arrivals", href: "/collections/new-arrivals" },
-    { label: "On Sale", href: "/collections/on-sale" },
-    { label: "Accessories", href: "/collections/accessories" },
-    { label: "More", href: "/collections/more" },
+    { label: 'New Arrivals', href: '/collections/new-arrivals' },
+    { label: 'On Sale', href: '/collections/on-sale' },
+    { label: 'Accessories', href: '/collections/accessories' },
+    { label: 'More', href: '/collections/more' },
   ];
 
   return (
@@ -24,11 +24,11 @@ export default function Footer() {
     >
       <Box
         sx={{
-          maxWidth: "1440px",
-          mx: "auto",
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          justifyContent: "space-between",
+          maxWidth: '1440px',
+          mx: 'auto',
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+          justifyContent: 'space-between',
           gap: 4,
         }}
       >
@@ -47,7 +47,7 @@ export default function Footer() {
           <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
             Quick Links
           </Typography>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
             {quickLinks.map((link) => (
               <Link
                 key={link.href}
@@ -55,7 +55,7 @@ export default function Footer() {
                 underline="none"
                 sx={{
                   color: colors.white,
-                  "&:hover": { color: colors.carrotOrange },
+                  '&:hover': { color: colors.carrotOrange },
                 }}
               >
                 {link.label}
@@ -75,7 +75,7 @@ export default function Footer() {
       </Box>
 
       {/* Copyright */}
-      <Box sx={{ textAlign: "center", mt: 4 }}>
+      <Box sx={{ textAlign: 'center', mt: 4 }}>
         <Typography variant="body2" sx={{ color: colors.dustGrey }}>
           &copy; {new Date().getFullYear()} MyStore. All rights reserved.
         </Typography>

@@ -1,4 +1,4 @@
-import OnSalePage from "@/ui/OnSalePage/page";
+import OnSalePage from '@/ui/OnSalePage/page';
 
 const NewArrivals = () => {
   return (

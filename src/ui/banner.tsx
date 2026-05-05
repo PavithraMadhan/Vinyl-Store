@@ -1,21 +1,21 @@
-"use client";
-import { useEffect, useState } from "react";
-import { Box } from "@mui/material";
+'use client';
+import { useEffect, useState } from 'react';
+import { Box } from '@mui/material';
 
 const images = [
-  "/BannerImg1.jpeg",
-  "/BannerImg2.jpeg",
-  "/BannerImg3.jpeg",
+  '/BannerImg1.jpeg',
+  '/BannerImg2.jpeg',
+  '/BannerImg3.jpeg',
 ];
 
 const bannerImageStyle = {
-  position: "absolute",
+  position: 'absolute',
   top: 0,
   left: 0,
-  width: "100%",
-  height: "100%",
-  objectFit: "cover",
-  transition: "opacity 1s ease-in-out",
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
+  transition: 'opacity 1s ease-in-out',
 };
 
 export default function Banner() {
@@ -32,11 +32,11 @@ export default function Banner() {
   return (
     <Box
       sx={{
-        position: "relative",
-        width: "100%",
+        position: 'relative',
+        width: '100%',
         height: { xs: 200, sm: 300, md: 400 }, // responsive height
-        margin: "0 auto",
-        overflow: "hidden",
+        margin: '0 auto',
+        overflow: 'hidden',
         borderRadius: '8px',
       }}
     >

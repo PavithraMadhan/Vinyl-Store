@@ -1,24 +1,24 @@
-"use client";
+'use client';
 
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography } from '@mui/material';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
-import colors from "@/app/lib/colors";
-import { useRouter } from "next/navigation";
+import colors from '@/app/lib/colors';
+import { useRouter } from 'next/navigation';
 
 const navItems = [
-    { label: "New Arrivals", href: "/collections/new-arrivals" },
-    { label: "On Sale", href: "/collections/on-sale" },
-    { label: "Accessories", href: "/accessories" },
-    { label: "More", href: "/more" },
+    { label: 'New Arrivals', href: '/collections/new-arrivals' },
+    { label: 'On Sale', href: '/collections/on-sale' },
+    { label: 'Accessories', href: '/accessories' },
+    { label: 'More', href: '/more' },
 ];
 
 const headerParentStyle = {
-    maxWidth: "1440px",
-    margin: "0 auto",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
+    maxWidth: '1440px',
+    margin: '0 auto',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     py: '0.5rem',
     px: '0.75rem',
 };
@@ -29,16 +29,16 @@ export default function Header() {
         <Box
             component="header"
             sx={{
-                width: "100%",
-                borderBottom: "1px solid #e5e7eb",
+                width: '100%',
+                borderBottom: '1px solid #e5e7eb',
             }}
         >
             <Box
                 sx={ headerParentStyle }
             >
-                <Box sx={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
                     {/* Logo */}
-                    <Typography variant="h6" fontWeight="bold" onClick={() => router.push('/')} sx={{ cursor: "pointer" }}>
+                    <Typography variant="h6" fontWeight="bold" onClick={() => router.push('/')} sx={{ cursor: 'pointer' }}>
                         MyStore
                     </Typography>
 
@@ -53,11 +53,11 @@ export default function Header() {
                         {navItems.map((item) => (
                             <Button key={item.href} href={item.href} variant="text"
                                 sx={{
-                                    textTransform: "none",
-                                    padding: "0.5rem 1rem",
+                                    textTransform: 'none',
+                                    padding: '0.5rem 1rem',
                                     borderRadius: 1,
-                                    transition: "background-color 0.3s, color 0.3s",
-                                    "&:hover": {
+                                    transition: 'background-color 0.3s, color 0.3s',
+                                    '&:hover': {
                                         backgroundColor: colors.turfGreen, // background changes on hover
                                         color: colors.white, // text color changes on hover
                                     },
@@ -71,7 +71,7 @@ export default function Header() {
                 </Box>
 
                 {/* Right-side icons/buttons */}
-                <Box sx={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
                     <ShoppingCartOutlinedIcon sx={{ width: '1.5rem', height: '1.5rem', color: '#000' }} />
 
                     {/* Mobile menu icon */}

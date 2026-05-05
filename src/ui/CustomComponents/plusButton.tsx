@@ -1,32 +1,32 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button, Box } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import CheckIcon from "@mui/icons-material/Check";
-import colors from "@/app/lib/colors";
+import { useState } from 'react';
+import { Button, Box } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import CheckIcon from '@mui/icons-material/Check';
+import colors from '@/app/lib/colors';
 
 const addToCartStyle = {
   minWidth: 0,
-  width: "40px",
-  height: "40px",
-  borderRadius: "50%",
+  width: '40px',
+  height: '40px',
+  borderRadius: '50%',
   padding: 0,
-  backgroundColor: "#fff",
-  border: `1px solid #ccc`,
-  color: "#000",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
+  backgroundColor: '#fff',
+  border: '1px solid #ccc',
+  color: '#000',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 };
 
 const addedToCartStyle = {
-  height: "40px",
-  borderRadius: "20px",
-  textTransform: "none",
+  height: '40px',
+  borderRadius: '20px',
+  textTransform: 'none',
   backgroundColor: colors.turfGreen,
-  color: "#fff",
-  padding: "0 1rem",
+  color: '#fff',
+  padding: '0 1rem',
 };
 
 const AddToCartButton = () => {

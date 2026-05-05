@@ -1,4 +1,4 @@
-import NewArrivalsPage from "@/ui/NewArrivalsPage/page";
+import NewArrivalsPage from '@/ui/NewArrivalsPage/page';
 
 const NewArrivals = () => {
   return (
