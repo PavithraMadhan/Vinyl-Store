@@ -19,7 +19,6 @@ export default function Footer() {
         color: colors.white,
         py: 4,
         px: { xs: 2, md: 6 },
-        mt: 6,
       }}
     >
       <Box
