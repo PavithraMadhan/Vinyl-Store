@@ -29,25 +29,26 @@ const addedToCartStyle = {
   padding: '0 1rem',
 };
 
-const AddToCartButton = () => {
+interface AddToCartButtonProps {
+  onAdd: () => void; // called when the product is added to cart
+}
+
+const AddToCartButton: React.FC<AddToCartButtonProps> = ({ onAdd }) => {
   const [added, setAdded] = useState(false);
+
+  const handleClick = () => {
+    onAdd();        // update the cart context
+    setAdded(true); // switch button UI
+  };
 
   return (
     <Box>
       {!added ? (
-        <Button
-          variant="outlined"
-          onClick={() => setAdded(true)}
-          sx={addToCartStyle}
-        >
+        <Button variant="outlined" onClick={handleClick} sx={addToCartStyle}>
           <AddIcon />
         </Button>
       ) : (
-        <Button
-          variant="contained"
-          startIcon={<CheckIcon />}
-          sx={addedToCartStyle}
-        >
+        <Button variant="contained" startIcon={<CheckIcon />} sx={addedToCartStyle}>
           Added to Cart
         </Button>
       )}

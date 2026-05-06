@@ -3,6 +3,7 @@
 import colors from '@/app/lib/colors';
 import { Box, Typography } from '@mui/material';
 import AddToCartButton from './CustomComponents/plusButton';
+import { useCart } from '@/app/context/CartContext';
 
 interface ProductCardProps {
     image: string;
@@ -47,6 +48,14 @@ const productDetailsBox = {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ image, name, price, isSoldOut = false, isOnSale = false, salePrice }) => {
+      const { addItem } = useCart(); // get addItem from context
+
+  const handleAddToCart = () => {
+    addItem({
+      name,
+      quantity: 1, // always 1 for each click
+    });
+  };
     return (
         <Box sx={parentBoxStyles}>
             {/* Image */}
@@ -108,7 +117,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, name, price, isSoldOut
                                 ${price}
                             </Typography>
                         )}
-                        <AddToCartButton />
+                        <AddToCartButton onAdd={handleAddToCart} />
                     </Box>
                 </Box>
             ) : (
